@@ -1,0 +1,26 @@
+{
+  "name": "League of Dreams",
+  "version": "0.0.5",
+  "description": "ClientSide of LoD",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Nobody",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "events": "^3.3.0",
+    "fs": "0.0.1-security",
+    "http": "^0.0.1-security",
+    "io": "^1.0.5",
+    "kill-process-by-name": "^1.0.5",
+    "process": "^0.11.10",
+    "request": "^2.88.2",
+    "sessions": "^0.0.2-7",
+    "socket.io-client": "^4.5.1",
+    "websocket": "^1.0.34"
+  },
+  "devDependencies": {
+    "electron": "^19.0.7"
+  }
+}

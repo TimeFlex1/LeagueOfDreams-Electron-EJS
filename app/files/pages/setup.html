@@ -1,0 +1,101 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>League of Dreams</title>
+    
+    <link rel="stylesheet" href="./setup.css">
+
+</head>
+<body>
+    <center><div class="logo" style="display: inline-block"></div><p style="display: inline-block; vertical-align:top; margin: 0; color: white; font-family:'Courier New', Courier, monospace; font-size: 50px; ">Settings</p></center>
+    <hr>
+    <center><h3 style="color: white">In order for client to work you have to select game.exe and a server from server list</h3></center>
+    <div class="div-Content">
+        <div class="div-Settings">
+
+            <label for="pathToGame">
+                <p style="color: white; font-family: 'Courier New', Courier, monospace;">Where is your game 4.20 installed? Select .exe file</p><br/>
+                <input name="pathToGame" class="pathToGame" id='pathToGame' type="file" accept=".exe" />
+              </label>
+              <br><br>
+              <label class="containerChkBox">Enable experimental features (exp Thirt Person view)
+                <input id="cheats" name="cheats" type="checkbox">
+                <span class="checkmarkChkBox"></span>
+              </label>
+        </div>
+        <div class="div-Info">
+            <nav>
+                <label for="touch"><span class="spanCSS" id="serverList">Server List</span></label>               
+                <input type="checkbox" id="touch">
+                <ul class="slide" onclick="" id="slide">
+                    
+                </ul>
+                <input type="text" name="serverIp" id="serverIp" value="" hidden>
+
+            </nav>
+        </div>
+        <br><br><br><br>
+        <button class="button-20" id="setupBtn" role="button">Save settings</button>
+    </div>
+    <input name="gamePath" id="gamePath" hidden>
+    <script>
+        var getJSON = function(url, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', url, true);
+            xhr.responseType = 'json';
+            xhr.onload = function() {
+            var status = xhr.status;
+            if (status === 200) {
+                callback(null, xhr.response);
+            } else {
+                callback(status, xhr.response);
+            }
+            };
+            xhr.send();
+        };
+
+        getJSON('http://164.68.103.55:3000/api/servers',
+        function(err, data) {
+            if (err !== null) {
+                console.log(err);
+            } else {
+                try {
+                    for(var i = 0; i < data.length; i++){
+                        document.getElementById("slide").innerHTML += "<li onclick=setServer('" + data[i].IP + "')><a>" + data[i].Name + "</a><p>" + data[i].Motd + "</p><input type='text' value='" + data[i].IP + "' disabled></li>";
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            }
+            
+        });
+        document.getElementById("slide").innerHTML += "<li'><a>Enter Custom server:</a><p>WARNING: NOT RECOMMENDED</p><input id='customIP' type='text' value='127.0.0.1'><br><button onclick='setServer(null)'>Connect</button></li>";
+
+        let input = document.getElementById('pathToGame');
+        // Get path of selected file in input field
+        input.addEventListener('change', function(e) {
+            const files = e.target.files;
+            let path = files[0].path;
+            // Split path into array and remove last element
+            let pathArray = path.split('\\');
+            pathArray.pop();
+            // Join array back into string
+            path = pathArray.join('\\');
+            // Set path as input value
+            document.getElementById('gamePath').value = path;
+        });
+
+        function setServer(ip){
+            if(ip == null){
+                ip = document.getElementById('customIP').value;
+            }
+            document.getElementById("slide").style.display = "none";
+            document.getElementById("serverList").innerHTML = "Server: " + ip;
+            document.getElementById("serverIp").value = ip;
+            console.log(ip);
+            console.log(document.getElementById("serverIp").value);
+        }
+
+    </script>
+</body>
+</html>
