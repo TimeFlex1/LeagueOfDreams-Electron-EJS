@@ -178,7 +178,7 @@ ipcMain.on('openSettings', (event) => {
 ipcMain.on('setPath', (event, data, restart) => {
     try {
         if (fs.existsSync(data + "\\League of Legends.exe")) {
-            fs.writeFile('C:\\ProgramData\\LoDproject\\config\\path.igor', data, function (err) {
+            fs.writeFile(__dirname + '\\config\\path.igor', data, function (err) {
                 if (err) throw err;
                 if(restart){
                     app.relaunch();
@@ -207,7 +207,7 @@ ipcMain.on('setPath', (event, data, restart) => {
 
 ipcMain.on('setServer', (event, data, restart) => {
     try {
-        fs.writeFile('C:\\ProgramData\\LoDproject\\config\\server.igor', data, function (err) {
+        fs.writeFile(__dirname + '\\config\\server.igor', data, function (err) {
             if (err) throw err;
             if(restart){
                 app.relaunch();
@@ -303,11 +303,11 @@ function createLoadingWindow() {
 }
 
 app.whenReady().then(() => {
-    if (fs.existsSync('C:\\ProgramData\\LoDproject\\config\\path.igor')) {
-        if (fs.existsSync('C:\\ProgramData\\LoDproject\\config\\server.igor')) {
-            fs.readFile('C:\\ProgramData\\LoDproject\\config\\path.igor', 'utf8', function(err, path){
+    if (fs.existsSync(__dirname + '\\config\\path.igor')) {
+        if (fs.existsSync(__dirname + '\\config\\server.igor')) {
+            fs.readFile(__dirname + '\\config\\path.igor', 'utf8', function(err, path){
                 if(err) throw(err);
-                fs.readFile('C:\\ProgramData\\LoDproject\\config\\server.igor', 'utf8', function(err, serverLoaded){
+                fs.readFile(__dirname + '\\config\\server.igor', 'utf8', function(err, serverLoaded){
                     if(err) throw(err);
                     pathtoGame = path;
                     server = "http://" + serverLoaded + ":3000"
