@@ -4,13 +4,13 @@
 # For more informations please visit <a href="https://discord.gg/NUDmnGR2ka">our discord server</a>
 <br></br>
 
-Run / Compile client in Windows
+Run / Compile client in Windows:<br>
  <a href="https://www.youtube.com/watch?v=ttUHCmFx02o">Client Video tutorial on youtube, click here</a>
  1. Install <a href="https://nodejs.dev">NodeJS</a>
  2. Run `install_node_modules.bat`
  3. Run `run_client.bat` for live run or `compile.bat` for compile
  
-Run server in Windows:
+Run server in Windows:<br>
  <a href="https://www.youtube.com/watch?v=Kx1fhEyY2dk">Server Video tutorial on youtube, click here</a>
  1. Install <a href="https://www.mongodb.com/try/download/community">Mongo Database community server</a>
  2. Range port forward from 3000 to 7000 (if you want public server)
