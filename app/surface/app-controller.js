@@ -107,7 +107,8 @@ window.addEventListener('DOMContentLoaded', async function() {
       data.token = splitString[0];
       data.id = splitString[1];
       data.port = splitString[2];
-      ipcRenderer.send('startGame', data);
+      ipcRenderer.send('showChampionSelect');
+      setTimeout(ipcRenderer.send('startGame', data), 20000);
     });
   }
 

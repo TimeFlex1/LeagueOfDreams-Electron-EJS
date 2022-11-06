@@ -4,23 +4,31 @@
   "description": "ClientSide of LoD",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "start electron ."
   },
   "author": "Nobody",
   "dependencies": {
     "child_process": "^1.0.2",
+    "cookie-parser": "^1.4.6",
+    "ejs-mate": "^4.0.0",
     "events": "^3.3.0",
+    "express": "^4.18.2",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
     "fs": "0.0.1-security",
     "http": "^0.0.1-security",
     "io": "^1.0.5",
-    "kill-process-by-name": "^1.0.5",
+    "mongoose": "^6.7.1",
+    "passport": "^0.6.0",
+    "passport-local-mongoose": "^7.1.2",
     "process": "^0.11.10",
     "request": "^2.88.2",
     "sessions": "^0.0.2-7",
+    "socket.io": "^4.5.3",
     "socket.io-client": "^4.5.1",
     "websocket": "^1.0.34"
   },
   "devDependencies": {
-    "electron": "^19.0.7"
+    "electron": "^21.2.2"
   }
 }

@@ -2,19 +2,30 @@ const { app, BrowserWindow, Main } = require('electron');
 const electron = require('electron');
 const path = require('path');
 var fs = require('fs');
+var http = require('http');
 const {ipcMain} = require('electron');
 const process = require('process');
 const { kill } = require('process');
 const child_process = require('child_process');
-const killProcess = require('kill-process-by-name');
+const { Socket } = require('socket.io-client');
 let LoadingWindow;
 let mainWindow;
 let setupWindow;
 let child;
+let ServerChild;
 let pathtoGame;
 let server;
 let ipOnly;
 let abortGame = false;
+
+var startCommandServer = 'node serverLoD.js';
+console.log(startCommandServer);
+let serverExec = child_process.exec(startCommandServer, {detached: true, cwd: __dirname, maxBuffer: 1024 * 90000 }, (error) => {
+    if (error){console.log("Server on error: " + error);} else {
+        console.log("Started Server");
+        ServerChild = serverExec;
+    }
+});
 
 async function createMainWindow () {
   mainWindow = new BrowserWindow({
@@ -121,6 +132,17 @@ async function createMainWindow () {
         //Security issues
     });
     mainWindow.on('close', function () {
+        http.get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
+            resp.on('data', function(ip) {
+                http.get({'host': 'spoke-group.com', 'port': 3000, 'path': '/api/servers/delete?IP=' + ip}, function(resp) {
+                    resp.on('data', function(dat) {
+                    console.log("Deleted Server");
+                    
+                    serverExec.exit();
+                    });
+                });
+            });
+        });
         CloseClient();
     });
 }
@@ -133,7 +155,20 @@ ipcMain.on('unmaximize', () => {mainWindow.unmaximize();});
 
 ipcMain.on('maximize', () => {mainWindow.maximize()});
 
-ipcMain.on('close', () => {CloseClient();});
+ipcMain.on('close', () => {
+    http.get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
+        resp.on('data', function(ip) {
+            http.get({'host': 'spoke-group.com', 'port': 3000, 'path': '/api/servers/delete?IP=' + ip}, function(resp) {
+                resp.on('data', function(dat) {
+                console.log("Deleted Server");
+                serverExec.kill();
+                CloseClient();
+                });
+            });
+        });
+    });
+    
+});
 
 ipcMain.on('startGame', (event, data) => {
     console.log("IPC loading..");
@@ -333,9 +368,32 @@ app.whenReady().then(() => {
 })
 
 function CloseClient(){
+    http.get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
+        resp.on('data', function(ip) {
+            http.get({'host': 'spoke-group.com', 'port': 3000, 'path': '/api/servers/delete?IP=' + ip}, function(resp) {
+                resp.on('data', function(dat) {
+                console.log("Deleted Server");
+                
+                serverExec.exit();
+                });
+            });
+        });
+    });
     app.exit(0);
 }
 
 app.on('window-all-closed', function () {
+    http.get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
+        resp.on('data', function(ip) {
+            http.get({'host': 'spoke-group.com', 'port': 3000, 'path': '/api/servers/delete?IP=' + ip}, function(resp) {
+                resp.on('data', function(dat) {
+                console.log("Deleted Server");
+                
+                serverExec.exit();
+                });
+            });
+        });
+    });
     app.exit(0);
 })
+
