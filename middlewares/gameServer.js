@@ -111,7 +111,7 @@ exports.startGameServer = function(players, settings, gameServerPort, socket, lo
                     //Abort
                     console.log(__dirname + "\\GameServer\\Content\\LeagueSandbox-Default\\" + gameServerPort + ".json");
                     console.log("Cant write config file for game server. Aborting game");
-                    socket.emit('abortGame', "We couldn't write a new game data. aborting..");
+                    socket.emit('abortGame', "Can't write game data! Permissions? Did you setup the server first?");
                 } else {
                     try{
                         console.log("Starting gameConsole as child process");

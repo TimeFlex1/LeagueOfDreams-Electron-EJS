@@ -296,7 +296,7 @@ function joinLobby(lobbyName){
 }
 
 function startGame(){
-    socket.emit('championSelectOpen');
+    socket.emit('startGame');
 }
 
 function changeChamp(){
