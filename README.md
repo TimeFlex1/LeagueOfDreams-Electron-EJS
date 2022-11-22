@@ -5,7 +5,7 @@
 <br></br>
 
 <b>Did you know that after client & server merge, server auto-submits your ip to the main public server list ?</b><br>
-<p>Now you know!</p><br>
+<p>Now you know!</p>
  <p>If you have range ports forwarded anyone can see and connect to your server</p><br>
 
 Run / Compile client in Windows:<br>
