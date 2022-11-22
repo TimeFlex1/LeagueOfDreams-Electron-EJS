@@ -293,7 +293,7 @@ function createSetupWindow() {
     setupWindow.loadFile(__dirname + '/app/files/pages/setup.html');
     setupWindow.webContents.openDevTools();
     setupWindow.removeMenu();
-    setupWindow.setSize(1024, 800);
+    setupWindow.setSize(1024, 1000, true);
     setupWindow.center();
 }
 

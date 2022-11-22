@@ -1,6 +1,8 @@
 html {
-    background-image: url("./bg.jpg");
-    background-size: cover;
+    background-image: url("./settingsBG.png");
+    background-repeat: no-repeat;
+    background-size:auto;
+    background-position: cover;
     font-family: sans-serif;
     width: 100%;
     height: 100%;
@@ -52,7 +54,7 @@ body {
     color: white;
 }
 
-li a {text-decoration : none; color : #2d2f31;}
+li a {text-decoration : none; color : #0083B0;}
 
 .button-20 {
     appearance: button;
@@ -100,6 +102,10 @@ li a {text-decoration : none; color : #2d2f31;}
     box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
   }
   
+  input:disabled{
+    color: white;
+  }
+
   .button-20:active {
     background-color: #3E3BBA;
     background-image: none;
@@ -119,14 +125,14 @@ li a {text-decoration : none; color : #2d2f31;}
   }
 
 nav {
-  width : 300px;
+  width : 98.5%;
   height: auto;
-  background: #d9d9d9;
+  background: #0000004b;
 }
 
 .spanCSS {
   padding : 30px;
-  background : #2d2f31; 
+  background : #00000084; 
   color : white;
   font-size : 1.2em;
   font-variant : small-caps;
@@ -225,41 +231,41 @@ nav {
   }
 
 .slide {
-  clear:both;
-  width:auto;
-  height:0px;
-  overflow-X: hidden;
-  overflow-Y: auto;
+  display: none;
   text-align: center;
   padding: 0 !important;
   transition: height .4s ease;
+  
 }
 
 .slide li a{
     color: white;
+    vertical-align: middle;
+    display: table-cell;
 }
 
 .slide li {
+  
+    display: table;
     /* Center li to slide */
-    border: 1px solid rgba(45, 47, 49, 0.856);
-    display: inline-block;
+    border: 1px solid rgba(120, 0, 131, 0.856);
+    border-radius: 5px;
     float: left;
-    width: 100%;
+    width: 95%;
     height: auto;
     text-align: center;
     padding: 10px;
-    margin: 0;
-    background: #2d2f3128;
+    margin: 5px;
     color: white;
     font-size: 1.2em;
     font-variant: small-caps;
     cursor: pointer;
-    display: block;
+    background-image: url("https://spoke-group.com/assets/img/banner.jpg");
 }
 
 .slide li:hover{
     cursor: pointer;
-    background: #2d2f31;
+    background: #00d9ff13;
 }
 
 .slide li input{
@@ -269,7 +275,7 @@ nav {
     padding: 2px;
     letter-spacing: 2px;
     border: none;
-    cholor: white;
+    color: white;
 }
 
 .slide li input:hover{
@@ -279,12 +285,19 @@ nav {
     padding: 2px;
     letter-spacing: 2px;
     border: none;
-    cholor: white;
+    color: white;
 }
 
 #touch {position: absolute; opacity: 0; height: 0px;}    
 
-#touch:checked + .slide {height: 300px;} 
+#touch:checked + .slide {
+    display: block;
+    height: 57%;
+} 
+
+ul {
+  overflow-y: auto;
+}
 
 .container {
     margin-top: 10px;
@@ -298,14 +311,13 @@ nav {
 }
 
 .div-Settings {
-    float: left;
     padding: 10px;
-    width: 50%;
+    width: 100%;
     height: auto;
 }
 
 .div-Info {
-    float: right;
+    width: 100%;
     padding: 5px;
     margin: 5px;
 }

@@ -14,7 +14,7 @@
         <div class="div-Settings">
 
             <label for="pathToGame">
-                <p style="color: white; font-family: 'Courier New', Courier, monospace;">Where is your game 4.20 installed? Select .exe file</p><br/>
+                <p style="text-align:center; color: white; font-family: 'Courier New', Courier, monospace;">Where is your game 4.20 installed? Select .exe file</p><br/>
                 <input name="pathToGame" class="pathToGame" id='pathToGame' type="file" accept=".exe" />
               </label>
               <br><br>
@@ -69,7 +69,7 @@
             }
             
         });
-        document.getElementById("slide").innerHTML += "<li'><a>Enter Custom server:</a><p>WARNING: NOT RECOMMENDED</p><input id='customIP' type='text' value='127.0.0.1'><br><button onclick='setServer(null)'>Connect</button></li>";
+        document.getElementById("slide").innerHTML += "<li><a>Enter Custom server:</a><p>WARNING: NOT RECOMMENDED</p><input id='customIP' type='text' value='127.0.0.1'><br><button onclick='setServer(null)'>Connect</button></li>";
 
         let input = document.getElementById('pathToGame');
         // Get path of selected file in input field
