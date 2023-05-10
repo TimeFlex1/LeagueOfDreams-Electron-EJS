@@ -134,7 +134,7 @@ async function createMainWindow () {
     mainWindow.on('close', function () {
         http.get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
             resp.on('data', function(ip) {
-                http.get({'host': 'spoke-group.com', 'port': 3000, 'path': '/api/servers/delete?IP=' + ip}, function(resp) {
+                http.get({'host': '130.185.118.9', 'port': 3000, 'path': '/api/servers/delete?IP=' + ip}, function(resp) {
                     resp.on('data', function(dat) {
                     console.log("Deleted Server");
                     
