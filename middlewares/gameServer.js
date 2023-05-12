@@ -61,7 +61,7 @@ exports.startGameServer = function(players, settings, gameServerPort, socket, lo
         
         if (players != null){
             var config = {
-                "path": __dirname + "/GameServer/GameServerConsole/bin/Debug/net6.0/GameServerConsole",
+                "path": __dirname + "/GameServer/GameServerConsole/bin/Debug/net6.0/GameServerConsole.exe",
                 "pathToFolder": __dirname + "/GameServer/GameServerConsole/bin/Debug/net6.0"
             };
             var objToJSON = new Object();
