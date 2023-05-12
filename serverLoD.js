@@ -69,7 +69,7 @@ server.listen(secret.port, function(err) {
 		  console.log("My Ip is: " + ip);
 		  myIP = ip;
 		  var name = "SelfHosted" + Math.floor(Math.random() * 999);
-		  http.get({'host': 'spoke-group.com', 'port': 3000, 'path': '/api/servers/submit?Name=' + name + '&Motd=SelfHosted&IP=' + ip}, function(resp) {
+		  http.get({'host': '130.185.118.9', 'port': 3000, 'path': '/api/servers/submit?Name=' + name + '&Motd=SelfHosted&IP=' + ip}, function(resp) {
 			resp.on('data', function(dat) {
 			  console.log("Submited server! Result: " + dat);
 			});
