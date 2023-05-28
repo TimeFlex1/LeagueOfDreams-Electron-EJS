@@ -12,7 +12,6 @@ let LoadingWindow;
 let mainWindow;
 let setupWindow;
 let child;
-let ServerChild;
 let pathtoGame;
 let server;
 let ipOnly;
