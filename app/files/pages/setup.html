@@ -54,22 +54,26 @@
             xhr.send();
         };
 
-        getJSON('http://spoke-group.com:3000/api/servers',
-        function(err, data) {
-            if (err !== null) {
-                console.log(err);
-            } else {
-                try {
-                    for(var i = 0; i < data.length; i++){
-                        document.getElementById("slide").innerHTML += "<li onclick=setServer('" + data[i].IP + "')><a>" + data[i].Name + "</a><p>" + data[i].Motd + "</p><input type='text' value='" + data[i].IP + "' disabled></li>";
-                    }
-                } catch (e) {
-                    console.log(e);
-                }
-            }
-            
-        });
-        document.getElementById("slide").innerHTML += "<li><a>Enter Custom server:</a><p>WARNING: NOT RECOMMENDED</p><input id='customIP' type='text' value='127.0.0.1'><br><button onclick='setServer(null)'>Connect</button></li>";
+        try {
+            // getJSON('http://desktopby.co.uk:3000/api/servers',
+            // function(err, data) {
+            //     if (err !== null) {
+            //         console.log(err);
+            //     } else {
+            //         try {
+            //             for(var i = 0; i < data.length; i++){
+            //                 document.getElementById("slide").innerHTML += "<li onclick=setServer('" + data[i].IP + "')><a>" + data[i].Name + "</a><p>" + data[i].Motd + "</p><input type='text' value='" + data[i].IP + "' disabled></li>";
+            //             }
+            //         } catch (e) {
+            //             console.log(e);
+            //         }
+            //     }
+            // });
+            document.getElementById("slide").innerHTML += "<li onclick=setServer('127.0.0.1')><a>LocalHost</a><p>Your Server local</p><input type='text' value='127.0.0.1' disabled></li>";
+        } catch(e) {
+           console.log(e);
+        }
+        document.getElementById("slide").innerHTML += "<li><a>Enter Custom server:</a><input id='customIP' type='text' value='127.0.0.1'><br><button onclick='setServer(null)'>Connect</button></li>";
 
         let input = document.getElementById('pathToGame');
         // Get path of selected file in input field
