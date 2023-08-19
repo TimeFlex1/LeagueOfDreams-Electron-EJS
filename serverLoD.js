@@ -64,18 +64,6 @@ var server = http.createServer(app);
 server.listen(secret.port, function(err) {
 	if (err) throw err;
 	console.log("Server is Running" + secret.port);
-	http.get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
-		resp.on('data', function(ip) {
-		  console.log("My Ip is: " + ip);
-		  myIP = ip;
-		  var name = "SelfHosted" + Math.floor(Math.random() * 999);
-		  http.get({'host': '130.185.118.9', 'port': 3000, 'path': '/api/servers/submit?Name=' + name + '&Motd=SelfHosted&IP=' + ip}, function(resp) {
-			resp.on('data', function(dat) {
-			  console.log("Submited server! Result: " + dat);
-			});
-		  });
-		});
-	});
 });
 
 const io = new Server(server);
