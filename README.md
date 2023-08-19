@@ -3,10 +3,7 @@
 # Server was merged with client <br>
 # For more informations please visit <a href="https://discord.gg/NUDmnGR2ka">our discord server</a>
 <br></br>
-
-<b>Did you know that after client & server merge, server auto-submits your ip to the main public server list ?</b><br>
-<p>Now you know!</p>
- <p>If you have range ports forwarded anyone can see and connect to your server</p><br>
+<p>If you have range ports forwarded you can play with your friends</p><br>
 
 Run / Compile client in Windows:<br>
  <a href="https://www.youtube.com/watch?v=ttUHCmFx02o">Client Video tutorial on youtube, click here</a>
