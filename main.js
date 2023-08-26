@@ -222,6 +222,8 @@ ipcMain.on('openSettings', (event) => {
 
 ipcMain.on('setPath', (event, data, restart) => {
     try {
+        console.warn("Checking path..");
+        console.dir(data);
         if (fs.existsSync(data + "\\League of Legends.exe")) {
             fs.writeFile(__dirname + '\\config\\path.igor', data, function (err) {
                 if (err) throw err;
@@ -277,7 +279,7 @@ function createSetupWindow() {
         center: true,
         skipTaskbar: false,
         webPreferences: {
-            devTools: false,
+            devTools: true,
             nodeIntegration: false,
             nodeIntegrationInWorker: false,
             nodeIntegrationInSubFrames: false,

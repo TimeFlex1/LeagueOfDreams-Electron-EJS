@@ -55,8 +55,26 @@
     
     <div class="w-1/2 pl-4">
         <div class="space-y-4">
-            <label for="pathToGame" class="">Do you have game already installed? Select .exe file</label>
-            <input name="pathToGame" id="pathToGame" type="file" accept=".exe" class="input input-bordered">
+            <label for="gamePath" class="">Do you have game already installed? Select .exe file</label>
+            <input name="gamePathDummy" id="gamePathDummy" class="input input-bordered" type="file"/>
+            <input name="gamePath" id="gamePath" type="text" hidden/>
+            <script>
+                let fileInput = document.getElementById("gamePathDummy");
+                let gamePathInput = document.getElementById("gamePath");
+                fileInput.addEventListener("change", function() {
+
+                var selectedFile = fileInput.files[0].path;
+                var pathArray = selectedFile.split("\\");
+
+                pathArray.pop();
+
+                var parentDirectory = pathArray.join("\\");
+                console.log(parentDirectory);
+
+                gamePathInput.value = parentDirectory;
+
+                });
+            </script>
         </div>
         <br>
         <div>
@@ -79,8 +97,6 @@
         <button class="btn btn-blue mt-4" id="setupBtn" role="button">Save settings</button>
     </div>
 </div>
-
-<input name="gamePath" id="gamePath" hidden>
 
 <!-- Include your setup.js script here -->
 <script src="./setup.js"></script>
