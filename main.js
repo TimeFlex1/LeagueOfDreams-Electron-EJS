@@ -279,7 +279,7 @@ function createSetupWindow() {
         center: true,
         skipTaskbar: false,
         webPreferences: {
-            devTools: true,
+            devTools: false,
             nodeIntegration: false,
             nodeIntegrationInWorker: false,
             nodeIntegrationInSubFrames: false,
