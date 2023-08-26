@@ -8,7 +8,8 @@ const session = require('express-session');  // session middleware
 const passport = require('passport');  // authentication
 const { Server } = require("socket.io"); // socket.io
 var http = require('http'); // http server
-let myIP;
+var path = require('path'); // path
+var fs = require('fs'); // file system
  
 var secret = require('./config/secret');
 
@@ -55,8 +56,13 @@ var userRoutes = require('./routes/user');
 app.use(apiRoutes);
 app.use(mainRoutes);
 app.use(userRoutes);
-app.get('*', function (req, res, next){
-	res.redirect('/');
+app.get('*', async function(req,res){
+    let file = path.join(__dirname + '/public/auto/'+req.url);
+    if(fs.existsSync(file)){
+        res.sendFile(file);
+    } else {
+		res.status(404).send('404 Not Found');
+	}
 });
 
 var server = http.createServer(app);

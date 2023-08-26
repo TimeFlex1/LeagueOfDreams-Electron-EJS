@@ -1,323 +1,106 @@
-html {
-    background-image: url("./settingsBG.png");
-    background-repeat: no-repeat;
-    background-size:auto;
-    background-position: cover;
-    font-family: sans-serif;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.title-bar {
+	-webkit-app-region: drag;
+	background-color: rgba(0, 0, 35, 0.6);
+	position: fixed;
+	top: 0;
+	margin-bottom: 10px;
+	width: 100%;
+	overflow: auto;
+	z-index: 12;
+	border-bottom: 1px solid;
+	border-image-source: linear-gradient(90deg, rgba(182,105,0,1) 0%, rgba(255,241,0,1) 50%, rgba(182,105,0,1) 100%);
+	border-image-slice: 2;
+	vertical-align: baseline;
+	z-index: 100;
 }
 
-p a h1 h2 h3 span {
-  font-family: sans-serif !important;
-}
-
-.simpleText{
-    font-size: 20px;
-    color: white;
-    text-align: center;
-    margin-top: 10%;
-}
-
-.pathToGame {
-    padding: 10px;
-    letter-spacing: 2px;
-    outline: none;
-    border: none;
-    width: 80%;
-    margin-left: 10%;
-    color: white;
-}
-
-.pathToGame:single-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    overflow: auto;
-}
-
-.directoryName {
-    color: white;
-}
-
-li a {text-decoration : none; color : #0083B0;}
-
-.button-20 {
-    appearance: button;
-    background-color: #4D4AE8;
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, .15), rgba(255, 255, 255, 0));
-    border: 1px solid #4D4AE8;
-    border-radius: 1rem;
-    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset,rgba(46, 54, 80, 0.075) 0 1px 1px;
-    box-sizing: border-box;
-    color: #FFFFFF;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.5;
-    margin: 0;
-    padding: .5rem 1rem;
-    text-align: center;
-    text-transform: none;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    position: fixed;
-    bottom: 0;
-    /* Center button to bottom of the page*/
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .button-20:focus:not(:focus-visible),
-  .button-20:focus {
-    outline: 0;
-  }
-  
-  .button-20:hover {
-    background-color: #3733E5;
-    border-color: #3733E5;
-  }
-  
-  .button-20:focus {
-    background-color: #413FC5;
-    border-color: #3E3BBA;
-    box-shadow: rgba(255, 255, 255, 0.15) 0 1px 0 inset, rgba(46, 54, 80, 0.075) 0 1px 1px, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
-  }
-  
-  input:disabled{
-    color: white;
-  }
-
-  .button-20:active {
-    background-color: #3E3BBA;
-    background-image: none;
-    border-color: #3A38AE;
-    box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset;
-  }
-  
-  .button-20:active:focus {
-    box-shadow: rgba(46, 54, 80, 0.125) 0 3px 5px inset, rgba(104, 101, 235, 0.5) 0 0 0 .2rem;
-  }
-  
-  .button-20:disabled {
-    background-image: none;
-    box-shadow: none;
-    opacity: .65;
-    pointer-events: none;
-  }
-
-nav {
-  width : 98.5%;
-  height: auto;
-  background: #0000004b;
-}
-
-.spanCSS {
-  padding : 30px;
-  background : #00000084; 
-  color : white;
-  font-size : 1.2em;
-  font-variant : small-caps;
-  cursor : pointer;
-  display: block;
-}
-
-.spanCSS::after {
-  float: right;
-  height: auto;
-  content: "+";
-}
-
-.containerChkBox {
-    margin: 10px;
-    color: white;
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-  
-  .containerChkBox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  .checkmarkChkBox {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
-  }
-  
-  .containerChkBox:hover input ~ .checkmarkChkBox {
-    background-color: #ccc;
-  }
-  
-  .containerChkBox input:checked ~ .checkmarkChkBox {
-    background-color: #2196F3;
-  }
-  
-  .checkmarkChkBox:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  
-  .containerChkBox input:checked ~ .checkmarkChkBox:after {
-    display: block;
-  }
-
-  hr {
+.nav{
+	margin: 0;
+	padding: 0 !important;
 	border: 0;
-	box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.3);
-	height: 2px;
-	width: 90%;
-	background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.06) 67%, rgba(0, 0, 0, 0) 71%);
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0, 0, 0, 1)), color-stop(67%, rgba(0, 0, 0, 0.06)), color-stop(71%, rgba(0, 0, 0, 0)));
-	background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.06) 67%, rgba(0, 0, 0, 0) 71%);
-	background: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.06) 67%, rgba(0, 0, 0, 0) 71%);
-	background: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.06) 67%, rgba(0, 0, 0, 0) 71%);
-	background: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.06) 67%, rgba(0, 0, 0, 0) 71%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00000000', GradientType=1);
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
-  .logo {
-    background-image: url('./icon.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100px;
-    height: 100px;
-    margin-top: 0px;
-}
-  .containerChkBox .checkmarkChkBox:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
+.navbtn {
+	border: 1px solid black;
+	border-radius: 50%;
+	width: 20px;
 
-.slide {
-  display: none;
-  text-align: center;
-  padding: 0 !important;
-  transition: height .4s ease;
+	height: 20px;
+	font-size: 15px;
+	text-align: center;
+	outline:none;
+	margin: 5px;
+	vertical-align: center;
+}
+
+.infoText {
+	display: none;
+	width: 120px;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border-radius: 6px;
+	padding: 5px 0;
   
+	/* Position the tooltip */
+	right: 0;
+	margin:5px;
+	margin-top: 35px;
+	position: absolute;
+	z-index: 99999999;
 }
 
-.slide li a{
-    color: white;
-    vertical-align: middle;
-    display: table-cell;
+.title-bar-btns {
+	-webkit-app-region: no-drag;
+	float: right;
 }
 
-.slide li {
-  
-    display: table;
-    /* Center li to slide */
-    border: 1px solid rgba(120, 0, 131, 0.856);
-    border-radius: 5px;
-    float: left;
-    width: 95%;
-    height: auto;
-    text-align: center;
-    padding: 10px;
-    margin: 5px;
-    color: white;
-    font-size: 1.2em;
-    font-variant: small-caps;
-    cursor: pointer;
-    background-image: url("https://spoke-group.com/assets/img/banner.jpg");
+.minbtn {
+	background-color: #B9B900;
+	color: white;
 }
 
-.slide li:hover{
-    cursor: pointer;
-    background: #00d9ff13;
+.minbtn:hover{
+	background-color: #8A8A00;
 }
 
-.slide li input{
-    cursor: pointer;
-    border-radius: 0;
-    outline: none;
-    padding: 2px;
-    letter-spacing: 2px;
-    border: none;
-    color: white;
+.maxbtn {
+	background-color: #10A800;
+	color: white;
 }
 
-.slide li input:hover{
-    cursor: pointer;
-    border-radius: 0;
-    outline: none;
-    padding: 2px;
-    letter-spacing: 2px;
-    border: none;
-    color: white;
+.maxbtn:hover{
+	background-color: #0D8900;
 }
 
-#touch {position: absolute; opacity: 0; height: 0px;}    
-
-#touch:checked + .slide {
-    display: block;
-    height: 57%;
-} 
-
-ul {
-  overflow-y: auto;
+.closebtn{
+	background-color: #9E0000;
+	color: white;
 }
 
-.container {
-    margin-top: 10px;
-    overflow: auto, hidden;
+.refreshbtn{
+	background-color: rgb(0, 126, 253);
+	color: white;
+	margin-right: 20px;
 }
 
-.div-Content {
-    width: 99%;
-    height: 80%;
-    position: absolute;
+.refreshbtn:hover{
+	background-color: rgb(0, 86, 171);
 }
 
-.div-Settings {
-    padding: 10px;
-    width: 100%;
-    height: auto;
+.settingsbtn{
+	background-color: rgb(106, 106, 106);
+	color: white;
+	margin-right: 20px;
 }
 
-.div-Info {
-    width: 100%;
-    padding: 5px;
-    margin: 5px;
+.settingsbtn:hover{
+	background-color: rgb(68, 68, 68);
+}
+
+.closebtn:hover{
+	background-color: #7F0000;
 }

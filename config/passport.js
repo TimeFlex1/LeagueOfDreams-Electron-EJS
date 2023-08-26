@@ -2,7 +2,6 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var secret = require('../config/secret');
 var User = require('../models/user');
-const request = require('request');
 
 var async = require('async');
 // serialize and deserialize

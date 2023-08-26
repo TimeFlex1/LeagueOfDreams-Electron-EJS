@@ -153,7 +153,7 @@ socket.on('updatePlayers', function(players, myId) {
     var adminbtns = '<i class="fa fa-exclamation-triangle kick" style="font-size:25px;"></i>';
     var switchbtn = '<i class="fa fa-exchange moveTo" onclick="moveTo(' + "'" + currentLobby + "'" + ')" style="font-size:25px; float:right;"></i>';
     if(players[i].username == currentId){
-        str = '<p' + ' id="player' + players[i].displayname +'">' + players[i].displayname + champHtml + switchbtn;
+        str = '<p' + ' id="player' + players[i].displayname +'">' + players[i].displayname + switchbtn;
     } else { 
         str = '<p' + ' id="player' + players[i].displayname +'">'+ players[i].displayname;
     }
@@ -161,9 +161,9 @@ socket.on('updatePlayers', function(players, myId) {
         if(players[i].username == currentId){
             startButton = '<button class="lobbyButton" onclick="startGame();">Start Game</button>';
             document.getElementById("LobbyButtons").innerHTML += startButton;
-            str += '<i class="fa-solid fa-crown"></i>' + '</p>';
+            str += '<img width="44px" height="44px" src="/crown.png">' + '</p>';
         } else {
-            str += '<i class="fa-solid fa-crown"></i>' + adminbtns + '</p>';
+            str += '<img width="44px" height="44px" src="/crown.png">' + adminbtns + '</p>';
         }
     } else {
         str += '</p>';
@@ -299,8 +299,8 @@ function startGame(){
     socket.emit('startGame');
 }
 
-function changeChamp(){
-    var champ = document.getElementById("champ").value;
+function changeChamp(champ){
+    console.log("CHANGE CHAMP TO " + champ + " " + currentLobby);
     socket.emit('changeChamp', champ);
 }
 
@@ -334,6 +334,5 @@ function moveTo(lobbyName){
 }
 
 function backToClient(){
-    document.getElementById("inGame").style.display = "none";
-    document.getElementById("inClient").style.display = "block";
+    window.location.href = '/';
 }

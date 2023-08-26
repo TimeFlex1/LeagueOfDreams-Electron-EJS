@@ -1,6 +1,8 @@
 const { app, BrowserWindow, Main } = require('electron');
 const electron = require('electron');
+const {download} = require("electron-dl");
 const path = require('path');
+const unzip = require('unzipper');
 var fs = require('fs');
 var http = require('http');
 const {ipcMain} = require('electron');
@@ -16,6 +18,7 @@ let pathtoGame;
 let server;
 let ipOnly;
 let abortGame = false;
+
 
 async function createMainWindow () {
   mainWindow = new BrowserWindow({
@@ -52,7 +55,9 @@ async function createMainWindow () {
     minWidth: 1080
   });
     mainWindow.loadURL(server);
-    mainWindow.webContents.openDevTools();
+    setTimeout(function(){
+        mainWindow.webContents.openDevTools();
+    }, 2000);
     mainWindow.removeMenu();
     mainWindow.setSize(1280, 720);
     mainWindow.center();
@@ -126,27 +131,54 @@ async function createMainWindow () {
     });
 }
 
-ipcMain.on('refresh', () => {mainWindow.loadURL(server)});
+ipcMain.on("download", (event, info) => {
+    let absoluteFilePath;
+    console.warn("Downloading..");
 
-ipcMain.on('minimize', () => {mainWindow.minimize()});
-
-ipcMain.on('unmaximize', () => {mainWindow.unmaximize();});
-
-ipcMain.on('maximize', () => {mainWindow.maximize()});
-
-ipcMain.on('close', () => {
-    http.get({'host': 'api.ipify.org', 'port': 80, 'path': '/'}, function(resp) {
-        resp.on('data', function(ip) {
-            http.get({'host': 'spoke-group.com', 'port': 3000, 'path': '/api/servers/delete?IP=' + ip}, function(resp) {
-                resp.on('data', function(dat) {
-                console.log("Deleted Server");
-                CloseClient();
-                });
+    if (!fs.existsSync(path.join(__dirname + "\\Game"))){
+        fs.mkdirSync(path.join(__dirname + "\\Game"));
+    }
+    info.properties.onProgress = status => 
+    setupWindow.webContents.send("download progress", status);
+    download(BrowserWindow.getFocusedWindow(), info.url, {directory: path.join(__dirname + "\\Game"), onProgress: info.properties.onProgress})
+        .then(function(dl){
+            setupWindow.webContents.send("download complete", dl.getSavePath());
+            absoluteFilePath = dl.getSavePath();
+        }).then(function(){
+            console.warn("Unzipping.. " + absoluteFilePath);
+            let respfs = fs.createReadStream(absoluteFilePath).pipe(unzip.Extract({ path: path.join(__dirname + "\\Game") }));
+            respfs.on('close', function(){
+                console.warn("Unzipped..");
+                try {
+                    let pathToExeGame = __dirname + "\\Game";
+                    fs.writeFile(__dirname + '\\config\\path.igor', pathToExeGame, function (err) {
+                        if (err) throw err;
+                        setupWindow.webContents.send("unzip complete", pathToExeGame);
+                    });
+                } catch(e){
+                    var options = {
+                        title: 'Your path is wrong',
+                        message: e.toString(),
+                        buttons: ["Ok"],
+                        type: 'error'
+                    };
+                    electron.dialog.showMessageBox(setupWindow,options).then(result => {});
+                }
             });
-        });
-    });
-    
+        })
 });
+
+ipcMain.on('setupRefresh', () => {setupWindow.relaunch();});
+ipcMain.on('setupMinimize', () => {setupWindow.minimize()});
+ipcMain.on('setupUnmaximize', () => {setupWindow.unmaximize();});
+ipcMain.on('setupMaximize', () => {setupWindow.maximize()});
+ipcMain.on('setupClose', () => {CloseClient();});
+
+ipcMain.on('refresh', () => {mainWindow.loadURL(server)});
+ipcMain.on('minimize', () => {mainWindow.minimize()});
+ipcMain.on('unmaximize', () => {mainWindow.unmaximize();});
+ipcMain.on('maximize', () => {mainWindow.maximize()});
+ipcMain.on('close', () => {CloseClient();});
 
 ipcMain.on('startGame', (event, data) => {
     console.log("IPC loading..");
@@ -249,7 +281,7 @@ function createSetupWindow() {
             nodeIntegration: false,
             nodeIntegrationInWorker: false,
             nodeIntegrationInSubFrames: false,
-            sandbox: false,
+            sandbox: true,
             enableRemoteModule: true,
             javascript: true,
             webSecurity: true,
@@ -262,17 +294,20 @@ function createSetupWindow() {
             preload: path.join(__dirname, '/app/surface/setup.js')
         },
         resizable: true,
-        maximizable: false,
+        maximizable: true,
         minimizable: true,
         closable: true,
-        fullscreenable: false,
-        frame: true,
+        fullscreenable: true,
+        frame: false,
     });
-    setupWindow.loadFile(__dirname + '/app/files/pages/setup.html');
-    setupWindow.webContents.openDevTools();
-    setupWindow.removeMenu();
-    setupWindow.setSize(1024, 1000, true);
-    setupWindow.center();
+    
+        setupWindow.loadFile(__dirname + '/app/files/pages/setup.html');
+        setupWindow.removeMenu();
+        setupWindow.setSize(1024, 1000, true);
+        setupWindow.center();
+        setTimeout(function(){
+            setupWindow.webContents.openDevTools();
+        }, 1000);
 }
 
 function createLoadingWindow() {

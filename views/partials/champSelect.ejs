@@ -1,0 +1,405 @@
+<div style="cursor: auto;">
+	
+
+	
+
+	<section id="" class="client-window ui-draggable ui-draggable-handle visible" style="height: 100%;width: 100%;margin: 0px !important;">
+		
+
+		<section class="main-panels" style="
+    margin: 0;
+">
+
+			<div class="left team-red">
+				<heading class="team-heading clearfix">
+					<h2 class="your-team clearfix">Your team</h2>
+					<span class="seconds clearfix">0</span>
+				</heading>
+
+				<div class="team-champions" id="teamRed">
+
+					<div class="champion-panel loaded">
+						<div class="champ-icon"><img src="assets/img/champ-hecarim.png"></div>
+						<div class="content-wrap">
+							<h3 class="player-name picked">PlayerTest</h3>
+							<small class="champ-slogan">Hecarim</small>
+
+							<div class="spell-icon">
+								<img src="assets/img/spell-flash.png">
+							</div>
+							<div class="spell-icon">
+								<img src="assets/img/spell-heal.png">
+							</div>
+						</div>
+					</div><!-- /champ-panel -->
+
+				</div>
+			</div><!-- /team-red -->
+
+
+
+
+
+			<div class="center champ-select">
+				<div class="steps">
+					<span>Ban</span>
+					<i class="fa fa-angle-right"></i>
+					<span class="current">Pick</span>
+					<i class="fa fa-angle-right"></i>
+					<span>Free</span>
+				</div>
+
+				<div class="select-wrapper">
+					<header class="tab-controllers">
+						<h4 class="message"><span>Lock in</span> your choice</h4>
+
+						<div class="tabs">
+							<div class="tab-element current" data-tabcontroller="champions">
+								<span>Champions</span>
+							</div>
+
+							<div class="tab-element" data-tabcontroller="skins">
+								<span>Skins</span>
+							</div>
+						</div>
+
+						<input type="text" class="search-champs" placeholder="Search champion">
+					</header>
+
+					<div class="champions-grid">
+						<input id="champ" class="champSelect" onclick="changeChamp('Aa');" name="champ" type="text" value="Aatrox" hidden>
+						<div class="champions-grid-overflow">
+							<div onclick="changeChamp(`Aatrox`)" class="champ-icon dived loaded "><img width="64px" height="64px" width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/266/tile"></div>
+							<div onclick="changeChamp(`Ahri`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/103/tile"></div>
+							<div onclick="changeChamp(`Akali`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/84/tile"></div>
+							<div onclick="changeChamp(`Alistar`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/12/tile"></div>
+							<div onclick="changeChamp(`Amumu`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/32/tile"></div>
+							<div onclick="changeChamp(`Anivia`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/34/tile"></div>
+							<div onclick="changeChamp(`Annie`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/1/tile"></div>
+							<div onclick="changeChamp(`Aphelios`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/523/tile"></div>
+							<div onclick="changeChamp(`Ashe`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/22/tile"></div>
+							<div onclick="changeChamp(`Aurelion Sol`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/136/tile"></div>
+							<div onclick="changeChamp(`Azir`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/268/tile"></div>
+							<div onclick="changeChamp(`Bard`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/432/tile"></div>
+							<div onclick="changeChamp(`Bel'Veth`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/200/tile"></div>
+							<div onclick="changeChamp(`Blitzcrank`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/53/tile"></div>
+							<div onclick="changeChamp(`Brand`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/63/tile"></div>
+							<div onclick="changeChamp(`Braum`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/201/tile"></div>
+							<div onclick="changeChamp(`Caitlyn`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/51/tile"></div>
+							<div onclick="changeChamp(`Camille`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/164/tile"></div>
+							<div onclick="changeChamp(`Cassiopeia`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/69/tile"></div>
+							<div onclick="changeChamp(`Cho'Gath`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/31/tile"></div>
+							<div onclick="changeChamp(`Corki`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/42/tile"></div>
+							<div onclick="changeChamp(`Darius`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/122/tile"></div>
+							<div onclick="changeChamp(`Diana`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/131/tile"></div>
+							<div onclick="changeChamp(`Draven`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/119/tile"></div>
+							<div onclick="changeChamp(`Dr. Mundo`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/36/tile"></div>
+							<div onclick="changeChamp(`Ekko`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/245/tile"></div>
+							<div onclick="changeChamp(`Elise`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/60/tile"></div>
+							<div onclick="changeChamp(`Evelynn`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/28/tile"></div>
+							<div onclick="changeChamp(`Ezreal`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/81/tile"></div>
+							<div onclick="changeChamp(`Fiddlesticks`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/9/tile"></div>
+							<div onclick="changeChamp(`Fiora`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/114/tile"></div>
+							<div onclick="changeChamp(`Fizz`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/105/tile"></div>
+							<div onclick="changeChamp(`Galio`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/3/tile"></div>
+							<div onclick="changeChamp(`Gangplank`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/41/tile"></div>
+							<div onclick="changeChamp(`Garen`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/86/tile"></div>
+							<div onclick="changeChamp(`Gnar`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/150/tile"></div>
+							<div onclick="changeChamp(`Gragas`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/79/tile"></div>
+							<div onclick="changeChamp(`Graves`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/104/tile"></div>
+							<div onclick="changeChamp(`Gwen`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/887/tile"></div>
+							<div onclick="changeChamp(`Hecarim`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/120/tile"></div>
+							<div onclick="changeChamp(`Heimerdinger`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/74/tile"></div>
+							<div onclick="changeChamp(`Illaoi`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/420/tile"></div>
+							<div onclick="changeChamp(`Irelia`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/39/tile"></div>
+							<div onclick="changeChamp(`Ivern`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/427/tile"></div>
+							<div onclick="changeChamp(`Janna`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/40/tile"></div>
+							<div onclick="changeChamp(`Jarvan IV`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/59/tile"></div>
+							<div onclick="changeChamp(`Jax`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/24/tile"></div>
+							<div onclick="changeChamp(`Jayce`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/126/tile"></div>
+							<div onclick="changeChamp(`Jhin`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/202/tile"></div>
+							<div onclick="changeChamp(`Jinx`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/222/tile"></div>
+							<div onclick="changeChamp(`Kai'Sa`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/145/tile"></div>
+							<div onclick="changeChamp(`Kalista`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/429/tile"></div>
+							<div onclick="changeChamp(`Karma`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/43/tile"></div>
+							<div onclick="changeChamp(`Karthus`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/30/tile"></div>
+							<div onclick="changeChamp(`Kassadin`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/38/tile"></div>
+							<div onclick="changeChamp(`Katarina`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/55/tile"></div>
+							<div onclick="changeChamp(`Kayle`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/10/tile"></div>
+							<div onclick="changeChamp(`Kayn`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/141/tile"></div>
+							<div onclick="changeChamp(`Kennen`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/85/tile"></div>
+							<div onclick="changeChamp(`Kha'Zix`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/121/tile"></div>
+							<div onclick="changeChamp(`Kindred`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/203/tile"></div>
+							<div onclick="changeChamp(`Kled`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/240/tile"></div>
+							<div onclick="changeChamp(`Kog'Maw`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/96/tile"></div>
+							<div onclick="changeChamp(`KSante`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/897/tile"></div>
+							<div onclick="changeChamp(`LeBlanc`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/7/tile"></div>
+							<div onclick="changeChamp(`Lee Sin`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/64/tile"></div>
+							<div onclick="changeChamp(`Leona`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/89/tile"></div>
+							<div onclick="changeChamp(`Lillia`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/876/tile"></div>
+							<div onclick="changeChamp(`Lissandra`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/127/tile"></div>
+							<div onclick="changeChamp(`Lucian`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/236/tile"></div>
+							<div onclick="changeChamp(`Lulu`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/117/tile"></div>
+							<div onclick="changeChamp(`Lux`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/99/tile"></div>
+							<div onclick="changeChamp(`Malphite`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/54/tile"></div>
+							<div onclick="changeChamp(`Malzahar`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/90/tile"></div>
+							<div onclick="changeChamp(`Maokai`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/57/tile"></div>
+							<div onclick="changeChamp(`Master Yi`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/11/tile"></div>
+							<div onclick="changeChamp(`Milio`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/902/tile"></div>
+							<div onclick="changeChamp(`Miss Fortune`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/21/tile"></div>
+							<div onclick="changeChamp(`MonkeyKing`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/62/tile"></div>
+							<div onclick="changeChamp(`Mordekaiser`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/82/tile"></div>
+							<div onclick="changeChamp(`Morgana`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/25/tile"></div>
+							<div onclick="changeChamp(`Naafiri`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/950/tile"></div>
+							<div onclick="changeChamp(`Nami`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/267/tile"></div>
+							<div onclick="changeChamp(`Nasus`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/75/tile"></div>
+							<div onclick="changeChamp(`Nautilus`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/111/tile"></div>
+							<div onclick="changeChamp(`Neeko`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/518/tile"></div>
+							<div onclick="changeChamp(`Nidalee`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/76/tile"></div>
+							<div onclick="changeChamp(`Nilah`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/895/tile"></div>
+							<div onclick="changeChamp(`Nocturne`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/56/tile"></div>
+							<div onclick="changeChamp(`Nunu & Willump`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/20/tile"></div>
+							<div onclick="changeChamp(`Olaf`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/2/tile"></div>
+							<div onclick="changeChamp(`Orianna`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/61/tile"></div>
+							<div onclick="changeChamp(`Ornn`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/516/tile"></div>
+							<div onclick="changeChamp(`Pantheon`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/80/tile"></div>
+							<div onclick="changeChamp(`Poppy`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/78/tile"></div>
+							<div onclick="changeChamp(`Pyke`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/555/tile"></div>
+							<div onclick="changeChamp(`Qiyana`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/246/tile"></div>
+							<div onclick="changeChamp(`Quinn`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/133/tile"></div>
+							<div onclick="changeChamp(`Rakan`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/497/tile"></div>
+							<div onclick="changeChamp(`Rammus`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/33/tile"></div>
+							<div onclick="changeChamp(`Rek'Sai`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/421/tile"></div>
+							<div onclick="changeChamp(`Rell`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/526/tile"></div>
+							<div onclick="changeChamp(`Renata Glasc`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/888/tile"></div>
+							<div onclick="changeChamp(`Renekton`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/58/tile"></div>
+							<div onclick="changeChamp(`Rengar`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/107/tile"></div>
+							<div onclick="changeChamp(`Riven`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/92/tile"></div>
+							<div onclick="changeChamp(`Rumble`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/68/tile"></div>
+							<div onclick="changeChamp(`Ryze`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/13/tile"></div>
+							<div onclick="changeChamp(`Samira`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/360/tile"></div>
+							<div onclick="changeChamp(`Sejuani`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/113/tile"></div>
+							<div onclick="changeChamp(`Senna`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/235/tile"></div>
+							<div onclick="changeChamp(`Seraphine`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/147/tile"></div>
+							<div onclick="changeChamp(`Sett`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/875/tile"></div>
+							<div onclick="changeChamp(`Shaco`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/35/tile"></div>
+							<div onclick="changeChamp(`Shen`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/98/tile"></div>
+							<div onclick="changeChamp(`Shyvana`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/102/tile"></div>
+							<div onclick="changeChamp(`Singed`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/27/tile"></div>
+							<div onclick="changeChamp(`Sion`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/14/tile"></div>
+							<div onclick="changeChamp(`Sivir`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/15/tile"></div>
+							<div onclick="changeChamp(`Skarner`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/72/tile"></div>
+							<div onclick="changeChamp(`Sona`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/37/tile"></div>
+							<div onclick="changeChamp(`Soraka`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/16/tile"></div>
+							<div onclick="changeChamp(`Swain`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/50/tile"></div>
+							<div onclick="changeChamp(`Sylas`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/517/tile"></div>
+							<div onclick="changeChamp(`Syndra`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/134/tile"></div>
+							<div onclick="changeChamp(`Tahm Kench`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/223/tile"></div>
+							<div onclick="changeChamp(`Taliyah`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/163/tile"></div>
+							<div onclick="changeChamp(`Talon`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/91/tile"></div>
+							<div onclick="changeChamp(`Taric`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/44/tile"></div>
+							<div onclick="changeChamp(`Teemo`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/17/tile"></div>
+							<div onclick="changeChamp(`Thresh`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/412/tile"></div>
+							<div onclick="changeChamp(`Tristana`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/18/tile"></div>
+							<div onclick="changeChamp(`Trundle`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/48/tile"></div>
+							<div onclick="changeChamp(`Tryndamere`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/23/tile"></div>
+							<div onclick="changeChamp(`Twisted Fate`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/4/tile"></div>
+							<div onclick="changeChamp(`Twitch`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/29/tile"></div>
+							<div onclick="changeChamp(`Udyr`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/77/tile"></div>
+							<div onclick="changeChamp(`Urgot`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/6/tile"></div>
+							<div onclick="changeChamp(`Varus`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/110/tile"></div>
+							<div onclick="changeChamp(`Vayne`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/67/tile"></div>
+							<div onclick="changeChamp(`Veigar`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/45/tile"></div>
+							<div onclick="changeChamp(`Vel'Koz`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/161/tile"></div>
+							<div onclick="changeChamp(`Vex`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/711/tile"></div>
+							<div onclick="changeChamp(`Vi`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/254/tile"></div>
+							<div onclick="changeChamp(`Viego`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/234/tile"></div>
+							<div onclick="changeChamp(`Viktor`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/112/tile"></div>
+							<div onclick="changeChamp(`Vladimir`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/8/tile"></div>
+							<div onclick="changeChamp(`Volibear`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/106/tile"></div>
+							<div onclick="changeChamp(`Warwick`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/19/tile"></div>
+							<div onclick="changeChamp(`Wukong`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/62/tile"></div>
+							<div onclick="changeChamp(`Xayah`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/498/tile"></div>
+							<div onclick="changeChamp(`Xerath`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/101/tile"></div>
+							<div onclick="changeChamp(`Xin Zhao`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/5/tile"></div>
+							<div onclick="changeChamp(`Yasuo`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/157/tile"></div>
+							<div onclick="changeChamp(`Yone`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/777/tile"></div>
+							<div onclick="changeChamp(`Yorick`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/83/tile"></div>
+							<div onclick="changeChamp(`Yuumi`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/350/tile"></div>
+							<div onclick="changeChamp(`Zac`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/154/tile"></div>
+							<div onclick="changeChamp(`Zed`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/238/tile"></div>
+							<div onclick="changeChamp(`Zeri`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/926/tile"></div>
+							<div onclick="changeChamp(`Zerianna`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/877/tile"></div>
+							<div onclick="changeChamp(`Zerima`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/903/tile"></div>
+							<div onclick="changeChamp(`Zeri'Tal`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/904/tile"></div>
+							<div onclick="changeChamp(`Zilean`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/26/tile"></div>
+							<div onclick="changeChamp(`Zoe`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/142/tile"></div>
+							<div onclick="changeChamp(`Zyra`)" class="champ-icon loaded "><img width="64px" height="64px" src="https://lolcdn.darkintaqt.com/cdn/champion/143/tile"></div>
+						</div>
+						
+						
+
+						<footer class="filters">
+							<span>Sort by:</span>
+							<span class="tag selected disabled" disabled>All champions</span>
+							<span class="tag disabled" disabled>Most played champion</span>
+							<span class="tag disabled" disabled>Recently used</span>
+
+							<div class="select-field">
+								<span class="text">My champion list</span>
+								<span class="dropdown-arrow"><i class="fa fa-angle-down"></i></span>
+
+								<ul>
+									<li>My first list</li>
+									<li>OP Champs</li>
+									<li>SATAN teeto</li>
+								</ul>
+							</div>
+						</footer>
+					</div>
+
+					<div class="controllers-wrapper">
+						<div class="controller-panel masteries">
+							<h5 class="panel-title">Runes &amp; Masteries</h5>
+							<div class="select-field">
+								<span class="text">Attack damage only and #YOLO</span>
+								<span class="dropdown-arrow"><i class="fa fa-angle-down"></i></span>
+
+								<ul>
+									<li>Tanky and stuff</li>
+									<li>Super secred stuff</li>
+								</ul>
+							</div>
+
+							<div class="select-field">
+								<span class="text">Mastery page 1</span>
+								<span class="dropdown-arrow"><i class="fa fa-angle-down"></i></span>
+								<span class="edit"><i class="fa fa-pencil"></i></span>
+
+								<ul>
+									<li>Mastery page 2</li>
+									<li>Mastery page 3</li>
+								</ul>
+							</div>
+						</div><!-- /masteries -->
+
+						<div class="controller-panel spells">
+							<h5 class="panel-title">Select spells</h5>
+							<div class="spell-icon">
+								<img src="assets/img/spell-flash-big.png">
+							</div>
+							<div class="spell-icon">
+								<img src="assets/img/spell-heal-big.png">
+							</div>
+						</div>
+
+						<div class="controller-panel spells">
+							<h5 class="panel-title">Ward Skin</h5>
+							<div class="spell-icon">
+								<img src="assets/img/icon-wardskin.png">
+							</div>
+						</div>
+
+						<div class="controller-panel play" id="LobbyButtons">
+							<button class="button-play"></button>
+						</div>
+					</div><!-- controllers-wrapper -->
+				</div>
+			</div><!-- /champ-select -->
+
+
+
+
+			<div class="right team-blue">
+				<heading class="team-heading clearfix">
+					<h2 class="your-team clearfix">Enemy team</h2>
+					<span class="seconds clearfix">0</span>
+				</heading>
+
+				<div class="team-champions" id="teamBlue">
+
+					<div class="champion-panel loaded">
+						<div class="champ-icon">
+						<img src="assets/img/champ-jinx.png"></div>
+						<div class="content-wrap">
+							<h3 class="player-name">Summoner 1</h3>
+
+							<div class="spell-icon"></div>
+							<div class="spell-icon"></div>
+						</div>
+					</div><!-- /champ-panel -->
+
+
+				</div>
+			</div><!-- /blue -->
+		</section><!-- /main-panels -->
+
+		<section class="section-comments">
+			<div class="left panel-ban">
+				<header class="heading">
+					<h4><i class="fa fa-close"></i> Banned Champions</h4>
+				</header>
+
+				<div class="banned-champ">
+					<span class="champ-name">Corki</span>
+					<img class="banned-champ" src="assets/img/ban-demo.png">
+				</div>
+				<div class="banned-champ">
+					<span class="champ-name">Nocturne</span>
+					<img class="banned-champ" src="assets/img/ban-noc.png">
+				</div>
+				<div class="banned-champ">
+					<span class="champ-name">Jax</span>
+					<img class="banned-champ" src="assets/img/ban-jax.png">
+				</div>
+			</div>
+
+			<div class="center panel-chat">
+				<header class="heading">
+					<h4 class="float-left">Team chat</h4>
+					<span class="float-right">Playing: <strong>Ranked game</strong></span>
+				</header>
+
+				<div class="chat-messages">
+					<span class="chat-msg"><strong class="user">Test:</strong> Testing msg</span>
+
+				<form class="input-area">
+					<input class="chatbox-input" type="text">
+					<input type="button" value="Submit" class="chat-submit">
+				</form>
+				</div>
+			</div>
+
+			<div class="right panel-ban">
+				<header class="heading">
+					<h4><i class="fa fa-close"></i> Banned Champions</h4>
+				</header>
+
+				<div class="banned-champ">
+					<span class="champ-name">Corki</span>
+					<img class="banned-champ" src="assets/img/ban-demo.png">
+				</div>
+				<div class="banned-champ">
+					<span class="champ-name">Jax</span>
+					<img class="banned-champ" src="assets/img/ban-jax.png">
+				</div>
+				<div class="banned-champ">
+					<span class="champ-name">Nocturne</span>
+					<img class="banned-champ" src="assets/img/ban-noc.png">
+				</div>
+			</div>
+
+		</section><!-- /section-comments -->
+
+		
+	</section><!-- /end client-window -->
+
+	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/master.css">
+
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="assets/js/script.js"></script>
+
+
+</div>
