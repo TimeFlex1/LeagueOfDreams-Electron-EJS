@@ -23,10 +23,10 @@ let abortGame = false;
 async function createMainWindow () {
   mainWindow = new BrowserWindow({
     icon: __dirname + '/app/files/img/icon.png',
-    Height: 640,
+    height: 894,
     title: "League of Dreams",
     show: false,
-    Width: 1080,
+    width: 1362,
     center: true,
     webPreferences: {
         devTools: false,
@@ -51,8 +51,8 @@ async function createMainWindow () {
     closable: true,
     fullscreenable: true,
 	frame: false,
-    minHeight: 640,
-    minWidth: 1080
+    minHeight: 894,
+    minWidth: 1362
   });
     mainWindow.loadURL(server);
     setTimeout(function(){
